@@ -6,11 +6,11 @@
 
 # AI Meeting
 
-A tool that runs **real-time debates between Claude + GPT + Gemini** inside Claude Code.
+**With just a Claude Code subscription, you get a free 4-way debate — You + Claude + GPT + Gemini.**
 
-Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
+A tool that runs **real-time debates between Claude + GPT + Gemini** inside Claude Code. Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
 
-> **Note**: This is a **Claude Code skill**. It runs exclusively inside Claude Code as a `/meeting` slash command.
+> **Note**: This is a **Claude Code skill**. It runs exclusively inside Claude Code as a `/meeting` slash command. GPT (Codex CLI) and Gemini CLI are both currently free.
 
 ## Why?
 
@@ -182,11 +182,11 @@ MIT
 
 # AI Meeting
 
-Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다.
+**Claude Code 구독 하나면, 사용자 + Claude + GPT + Gemini 4자 토론이 무료로 가능합니다.**
 
-의견 나열이 아닌 — 3라운드 토론 → 반박 → 수렴 → 최종 판정.
+Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다. 의견 나열이 아닌 — 3라운드 토론 → 반박 → 수렴 → 최종 판정.
 
-> **참고**: 이 도구는 **Claude Code 전용 스킬**입니다. Claude Code 안에서 `/meeting` 슬래시 커맨드로만 실행됩니다.
+> **참고**: 이 도구는 **Claude Code 전용 스킬**입니다. Claude Code 안에서 `/meeting` 슬래시 커맨드로만 실행됩니다. GPT (Codex CLI)와 Gemini CLI 모두 현재 무료입니다.
 
 ## 왜 필요한가?
 
