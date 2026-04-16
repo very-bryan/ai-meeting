@@ -91,6 +91,8 @@ In Claude Code, type `/meeting` followed by your debate topic.
 
 ## How It Works
 
+Every round, the **full conversation history** is passed to GPT and Gemini — so each AI reads what all others said in previous rounds before responding. This isn't a simple one-shot call; it's a structured debate where every AI builds on and responds to the actual arguments made.
+
 ```
 User: /meeting topic
     |
@@ -102,14 +104,14 @@ Round 1 — Initial Positions
 [Menu] Add opinion / Ask specific AI / Next round ← Arrow key selection
     |
     v
-Round 2 — Rebuttals & Persuasion
+Round 2 — Rebuttals & Persuasion (full R1 context passed to each AI)
     🔵 Claude rebuts → 🟢 GPT counter → 🔴 Gemini counter
     |
     v
 [Menu] Add opinion / Ask specific AI / Next round
     |
     v
-Round 3 — Convergence
+Round 3 — Convergence (full R1+R2 context passed to each AI)
     Each AI acknowledges valid points, holds firm on core arguments
     |
     v
@@ -118,6 +120,11 @@ Round 3 — Convergence
     - Remaining disagreements
     - Position evolution tracking
     - MVP argument
+    |
+    v
+🔄 Overtime — Want more? Say "continue"
+    Final Summary becomes the context for a new 3-round cycle
+    (history resets, so debates can go 10+ rounds without hitting token limits)
 ```
 
 ## User Participation Between Rounds
@@ -164,7 +171,6 @@ After each round, an **arrow-key selection menu** appears:
 
 - GPT/Gemini calls take 5-15 seconds each, ~30-45 seconds per round
 - Gemini free tier has daily usage limits
-- GPT/Gemini receive fresh context each call (no conversation history)
 
 ## Uninstall
 
@@ -267,6 +273,8 @@ Claude Code 터미널에서 `/meeting` 뒤에 토론 주제를 입력합니다.
 
 ## 동작 방식
 
+매 라운드마다 **이전 라운드의 전체 대화 내용**이 GPT와 Gemini에게 전달됩니다. 단순 원샷 호출이 아니라, 각 AI가 다른 AI의 실제 발언을 읽고 그에 대해 반박·동의하는 구조적 토론입니다.
+
 ```
 사용자: /meeting 주제 입력
     |
@@ -278,14 +286,14 @@ Claude Code 터미널에서 `/meeting` 뒤에 토론 주제를 입력합니다.
 [메뉴] 의견 추가 / 특정 AI에게 질문 / 다음 라운드 ← 화살표 키로 선택
     |
     v
-라운드 2 — 반박과 설득
+라운드 2 — 반박과 설득 (R1 전체 컨텍스트 전달)
     🔵 Claude 반론 → 🟢 GPT 재반박 → 🔴 Gemini 재반박
     |
     v
 [메뉴] 의견 추가 / 특정 AI에게 질문 / 다음 라운드
     |
     v
-라운드 3 — 수렴
+라운드 3 — 수렴 (R1+R2 전체 컨텍스트 전달)
     각 AI가 인정할 건 인정하고, 양보 못할 핵심을 고수
     |
     v
@@ -294,6 +302,11 @@ Claude Code 터미널에서 `/meeting` 뒤에 토론 주제를 입력합니다.
     - 평행선
     - 입장 변화 추적
     - MVP 주장
+    |
+    v
+🔄 연장전 — "계속", "더 해봐"라고 말하면
+    최종 정리를 기반으로 새 3라운드 시작
+    (히스토리 리셋 → 10라운드 이상도 토큰 한계 없이 가능)
 ```
 
 ## 라운드 사이 사용자 참여
@@ -340,7 +353,6 @@ Claude Code 터미널에서 `/meeting` 뒤에 토론 주제를 입력합니다.
 
 - GPT/Gemini 호출에 각 5~15초 소요, 전체 1라운드 약 30~45초
 - Gemini 무료 티어는 일일 사용량 제한 있음
-- GPT/Gemini에는 매 호출마다 컨텍스트를 새로 전달 (대화 히스토리 없음)
 
 ## 삭제
 
