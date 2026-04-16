@@ -1,14 +1,14 @@
-[한국어](#한국어) | [English](#english)
+[English](#english) | [한국어](#한국어)
 
 ---
 
-# 한국어
+# English
 
 # AI Meeting
 
-Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다.
+A tool that runs **real-time debates between Claude + GPT + Gemini** inside Claude Code.
 
-의견 나열이 아니라 3라운드 토론 → 반박 → 수렴 → 최종 판정까지, 진짜 토론을 합니다.
+Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
 
 ## 왜 필요한가?
 
@@ -176,11 +176,11 @@ MIT
 
 ---
 
-# English
+# 한국어
 
 # AI Meeting
 
-A tool that runs **real-time debates between Claude + GPT + Gemini** inside Claude Code.
+Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다.
 
 Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
 
