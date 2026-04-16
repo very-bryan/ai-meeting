@@ -10,6 +10,184 @@ A tool that runs **real-time debates between Claude + GPT + Gemini** inside Clau
 
 Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
 
+> **Note**: This is a **Claude Code skill**. It runs exclusively inside Claude Code as a `/meeting` slash command.
+
+## Why?
+
+- A single AI can have biased perspectives
+- Each AI has unique thinking patterns (Claude, GPT, Gemini each have their own LLM characteristics)
+- Multi-angle validation for business strategy, product decisions, technical choices, and philosophical debates
+- **Users can join the debate** between rounds
+
+## Installation
+
+### 1. Prerequisites
+
+You need Claude Code, Codex CLI (GPT), and Gemini CLI.
+
+```bash
+# Codex CLI (requires ChatGPT Pro subscription)
+npm install -g @openai/codex
+codex login
+
+# Gemini CLI (free, just needs a Google account)
+npm install -g @google/gemini-cli
+gemini  # Browser login on first run
+```
+
+### 2. Install AI Meeting
+
+One-liner:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/very-bryan/ai-meeting/main/install.sh | bash
+```
+
+Or git clone:
+
+```bash
+git clone https://github.com/very-bryan/ai-meeting.git
+cd ai-meeting
+./install.sh
+```
+
+### 3. Verify Installation
+
+```bash
+cat ~/.claude/commands/meeting.md
+```
+
+If the file exists, you're good to go.
+
+### 4. Update
+
+Re-run the install command to get the latest version:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/very-bryan/ai-meeting/main/install.sh | bash
+```
+
+## Usage
+
+In Claude Code, type `/meeting` followed by your debate topic.
+
+```
+/meeting your debate topic here
+```
+
+### Examples
+
+```
+/meeting How should we diversify our app's revenue model?
+
+/meeting What is the meaning of human identity in the AI era?
+
+/meeting React vs Vue vs Svelte for a new project?
+
+/meeting Self-hosted vs cloud infrastructure?
+
+/meeting Can UBI be the answer for the AI era?
+```
+
+## How It Works
+
+```
+User: /meeting topic
+    |
+    v
+Round 1 — Initial Positions
+    🔵 Claude → 🟢 GPT → 🔴 Gemini
+    |
+    v
+[Menu] Add opinion / Ask specific AI / Next round ← Arrow key selection
+    |
+    v
+Round 2 — Rebuttals & Persuasion
+    🔵 Claude rebuts → 🟢 GPT counter → 🔴 Gemini counter
+    |
+    v
+[Menu] Add opinion / Ask specific AI / Next round
+    |
+    v
+Round 3 — Convergence
+    Each AI acknowledges valid points, holds firm on core arguments
+    |
+    v
+📋 Final Summary
+    - Consensus points
+    - Remaining disagreements
+    - Position evolution tracking
+    - MVP argument
+```
+
+## User Participation Between Rounds
+
+After each round, an **arrow-key selection menu** appears:
+
+- **Add opinion** — Your input gets reflected in the next round by all 3 AIs
+- **Ask specific AI** — Pick Claude / GPT / Gemini to dig deeper
+- **Next round** — Proceed immediately
+
+## Sample Output
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 Final Summary
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🤝 Consensus
+- Points all 3 AIs agreed on
+
+⚔️ Remaining Disagreements
+- Claude: ...
+- GPT: ...
+- Gemini: ...
+
+💡 Position Evolution
+- How each AI's stance changed from Round 1
+
+🏆 MVP Argument
+- The most persuasive argument and why
+```
+
+## Cost
+
+| AI | Auth Method | Cost |
+|----|------------|------|
+| Claude | Claude Code subscription | Included |
+| GPT | Codex CLI (`codex login`) | Included in ChatGPT Pro |
+| Gemini | Gemini CLI (Google login) | Free |
+
+**Additional cost: $0**
+
+## Limitations
+
+- GPT/Gemini calls take 5-15 seconds each, ~30-45 seconds per round
+- Gemini free tier has daily usage limits
+- GPT/Gemini receive fresh context each call (no conversation history)
+
+## Uninstall
+
+```bash
+rm ~/.claude/commands/meeting.md
+```
+
+## License
+
+MIT
+
+---
+
+# 한국어
+
+# AI Meeting
+
+Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다.
+
+의견 나열이 아닌 — 3라운드 토론 → 반박 → 수렴 → 최종 판정.
+
+> **참고**: 이 도구는 **Claude Code 전용 스킬**입니다. Claude Code 안에서 `/meeting` 슬래시 커맨드로만 실행됩니다.
+
 ## 왜 필요한가?
 
 - 하나의 AI만으로는 편향된 시각을 가질 수 있음
@@ -165,158 +343,6 @@ Claude Code 터미널에서 `/meeting` 뒤에 토론 주제를 입력합니다.
 - GPT/Gemini에는 매 호출마다 컨텍스트를 새로 전달 (대화 히스토리 없음)
 
 ## 삭제
-
-```bash
-rm ~/.claude/commands/meeting.md
-```
-
-## License
-
-MIT
-
----
-
-# 한국어
-
-# AI Meeting
-
-Claude Code 안에서 **Claude + GPT + Gemini** 3개 AI가 **서로 반박하고 설득하는 실시간 디베이트**를 진행하는 도구입니다.
-
-Not just opinion listing — 3 rounds of debate → rebuttals → convergence → final verdict.
-
-## Why?
-
-- A single AI can have biased perspectives
-- Each AI has unique thinking patterns (Claude, GPT, Gemini each have their own LLM characteristics)
-- Multi-angle validation for business strategy, product decisions, technical choices, and philosophical debates
-- **Users can join the debate** between rounds
-
-## Installation
-
-### 1. Prerequisites
-
-You need Claude Code, Codex CLI (GPT), and Gemini CLI.
-
-```bash
-# Codex CLI (requires ChatGPT Pro subscription)
-npm install -g @openai/codex
-codex login
-
-# Gemini CLI (free, just needs a Google account)
-npm install -g @google/gemini-cli
-gemini  # Browser login on first run
-```
-
-### 2. Install AI Meeting
-
-One-liner:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/very-bryan/ai-meeting/main/install.sh | bash
-```
-
-Or git clone:
-
-```bash
-git clone https://github.com/very-bryan/ai-meeting.git
-cd ai-meeting
-./install.sh
-```
-
-### 3. Verify Installation
-
-```bash
-cat ~/.claude/commands/meeting.md
-```
-
-If the file exists, you're good to go.
-
-### 4. Update
-
-Re-run the install command to get the latest version:
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/very-bryan/ai-meeting/main/install.sh | bash
-```
-
-## Usage
-
-In Claude Code, type `/meeting` followed by your debate topic.
-
-```
-/meeting your debate topic here
-```
-
-### Examples
-
-```
-/meeting How should we diversify our app's revenue model?
-
-/meeting What is the meaning of human identity in the AI era?
-
-/meeting React vs Vue vs Svelte for a new project?
-
-/meeting Self-hosted vs cloud infrastructure?
-
-/meeting Can UBI be the answer for the AI era?
-```
-
-## How It Works
-
-```
-User: /meeting topic
-    |
-    v
-Round 1 — Initial Positions
-    🔵 Claude → 🟢 GPT → 🔴 Gemini
-    |
-    v
-[Menu] Add opinion / Ask specific AI / Next round ← Arrow key selection
-    |
-    v
-Round 2 — Rebuttals & Persuasion
-    🔵 Claude rebuts → 🟢 GPT counter → 🔴 Gemini counter
-    |
-    v
-[Menu] Add opinion / Ask specific AI / Next round
-    |
-    v
-Round 3 — Convergence
-    Each AI acknowledges valid points, holds firm on core arguments
-    |
-    v
-📋 Final Summary
-    - Consensus points
-    - Remaining disagreements
-    - Position evolution tracking
-    - MVP argument
-```
-
-## User Participation Between Rounds
-
-After each round, an **arrow-key selection menu** appears:
-
-- **Add opinion** — Your input gets reflected in the next round by all 3 AIs
-- **Ask specific AI** — Pick Claude / GPT / Gemini to dig deeper
-- **Next round** — Proceed immediately
-
-## Cost
-
-| AI | Auth Method | Cost |
-|----|------------|------|
-| Claude | Claude Code subscription | Included |
-| GPT | Codex CLI (`codex login`) | Included in ChatGPT Pro |
-| Gemini | Gemini CLI (Google login) | Free |
-
-**Additional cost: $0**
-
-## Limitations
-
-- GPT/Gemini calls take 5-15 seconds each, ~30-45 seconds per round
-- Gemini free tier has daily usage limits
-- GPT/Gemini receive fresh context each call (no conversation history)
-
-## Uninstall
 
 ```bash
 rm ~/.claude/commands/meeting.md

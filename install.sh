@@ -12,7 +12,7 @@ if [ -f "$SCRIPT_DIR/commands/meeting.md" ]; then
   cp "$SCRIPT_DIR/commands/meeting.md" ~/.claude/commands/meeting.md
 else
   # 원격 설치 (curl)
-  curl -fsSL https://raw.githubusercontent.com/go24/ai-meeting/main/commands/meeting.md -o ~/.claude/commands/meeting.md
+  curl -fsSL https://raw.githubusercontent.com/very-bryan/ai-meeting/main/commands/meeting.md -o ~/.claude/commands/meeting.md
 fi
 
 echo "✅ 설치 완료!"
